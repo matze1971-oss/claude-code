@@ -49,13 +49,7 @@ Der Preis: Den Schreibstil (Humanizer) gibt es zweimal. Wenn du ihn änderst, in
 
 ## Routinen
 
-| Hirn | Wann | Was |
-|---|---|---|
-| Arbeit | Werktags 7:45 | `/arbeit-mail-entwurf`, nur Entwürfe |
-| Arbeit | Werktags 17:10 | `/arbeit-ablage-belege`, nur Vorschlagsliste |
-| Arbeit | Freitags 15:50 | `/arbeit-wochen-rueckblick` |
-| Privat | Täglich 19:10 | `/privat-mail-entwurf` |
-| Privat | Samstags 9:50 | `/privat-ablage-belege` und `/privat-wochen-rueckblick` |
+Zeitpläne und fertige Prompts zum Reinkopieren stehen in `routinen.md`. Die Belege- und Rückblick-Routinen laufen sofort, die Mail-Routinen erst, wenn der Mailzugang geklärt ist.
 
 ## Die ersten zwei Wochen
 
