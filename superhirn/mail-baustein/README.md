@@ -55,4 +55,10 @@ Outlook zeigt den Server-Ordner `Sent` als „Sent Items“ an. Der Baustein fin
 
 ## Getestet
 
-Gegen einen lokalen IMAP-Testserver: Suchen mit Umlauten, Lesen ohne Gelesen-Markierung, Antwortentwurf mit Verlauf in einem Ordner „Entwürfe“, Anhänge mit Sonderzeichen im Namen. Nicht getestet: echter Hoster, Outlook-Anzeige der Entwürfe, Windows.
+Gegen einen lokalen IMAP-Testserver: Suchen mit Umlauten, Lesen ohne Gelesen-Markierung, Antwortentwurf mit Verlauf, Anhänge mit Sonderzeichen im Namen.
+
+Auf dem echten PC (Windows, Python 3.14, mail.de): Login, Ordnerliste, Suche im Gesendet-Ordner und ein Testentwurf, der in Outlook unter Entwürfe erscheint.
+
+## Claude Desktop aus dem Microsoft Store
+
+Die Store-Version hatte früher einen eigenen Datenordner unter `%LOCALAPPDATA%\Packages\Claude_…\LocalCache\Roaming\Claude`. Neuere Versionen nutzen wieder `%APPDATA%\Claude`. Maßgeblich ist der Pfad, der unter Einstellungen → Entwickler bei den laufenden Servern steht.
