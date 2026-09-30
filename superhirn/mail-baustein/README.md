@@ -61,11 +61,13 @@ Auf dem echten PC (Windows, Python 3.14, mail.de): Login, Ordnerliste, Suche im 
 
 ## Claude Desktop aus dem Microsoft Store
 
-Die Store-Version hatte früher einen eigenen Datenordner unter `%LOCALAPPDATA%\Packages\Claude_…\LocalCache\Roaming\Claude`. Neuere Versionen nutzen wieder `%APPDATA%\Claude`. Maßgeblich ist der Pfad, der unter Einstellungen → Entwickler bei den laufenden Servern steht.
+Die Store-Version liest ihre Konfiguration aus `%LOCALAPPDATA%\Packages\Claude_…\LocalCache\Roaming\Claude\claude_desktop_config.json`. „Konfiguration bearbeiten“ öffnet genau diese Datei. In den Einstellungen zeigt die App trotzdem `%APPDATA%\Claude` an, weil sie ihre eigene Sicht auf den Ordner hat. Den echten `%APPDATA%\Claude` gibt es nicht.
 
-## Als Erweiterung installieren (Weg für die Store-Version)
+Nach einer Änderung muss Claude Desktop komplett beendet werden, auch über das Symbol neben der Uhr. Nur das Fenster zu schließen reicht nicht.
 
-Liest Claude Desktop die `claude_desktop_config.json` nicht, geht es über die Erweiterung `mail-arbeit.mcpb`. Sie nutzt dieselbe Python-Umgebung und dasselbe gespeicherte Passwort.
+## Als Erweiterung installieren (nur als Notlösung)
+
+Nicht zusätzlich zum Eintrag in der Konfiguration installieren, sonst läuft `mail-arbeit` doppelt. Nur falls Claude Desktop die `claude_desktop_config.json` irgendwann nicht mehr liest, geht es über die Erweiterung `mail-arbeit.mcpb`. Sie nutzt dieselbe Python-Umgebung und dasselbe gespeicherte Passwort.
 
 1. `mail-arbeit.mcpb` nach `C:\Superhirn\mail-baustein` laden.
 2. Claude Desktop → Einstellungen → Erweiterungen → „Erweiterung installieren“ bzw. die Datei per Doppelklick öffnen.

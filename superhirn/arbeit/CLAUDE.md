@@ -6,7 +6,7 @@ Du arbeitest hier nur für den beruflichen Teil von Matthias. Private Dateien, p
 
 - Name: Matthias
 - Rolle / Firma: [z. B. Projektleiter bei ...]
-- Mailkonto: [Arbeitsadresse], Outlook beim Hoster [Name]. Zugriff nur über das Werkzeug `mail-arbeit`, nie über `mail-privat`.
+- Mailkonto: camping-tex@mail.de (mail.de, gelesen in Outlook). Zugriff nur über das Werkzeug `mail-arbeit`, nie über `mail-privat`.
 - Grußformel: [z. B. „Viele Grüße / Matthias Nachname“ + Signatur]
 
 ## Wo die Dateien liegen
