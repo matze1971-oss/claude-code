@@ -1,61 +1,64 @@
 # Superhirn
 
-Startpaket für Matthias. Ein Gedächtnis, zwei Bereiche (Arbeit und Privat), vier Skills und ein leichtes Protokoll, das zeigt, was sich wiederholt.
+Zwei getrennte Hirne für Matthias: eins für die Arbeit, eins für Privat. Sie teilen sich nichts. Jedes hat sein eigenes Gedächtnis, seine eigenen Skills, sein eigenes Mailkonto und sein eigenes Protokoll.
 
-Grundregel: Das Superhirn bereitet vor, du entscheidest. Es schreibt Entwürfe, schlägt Dateinamen vor und legt nichts ab und verschickt nichts, ohne dass du es freigibst.
+Grundregel in beiden: Das Superhirn bereitet vor, du entscheidest. Es schreibt Entwürfe und schlägt Ablageorte vor. Senden, verschieben und löschen passiert erst nach deiner Freigabe.
 
 ## Aufbau
 
 ```
 Superhirn/
-  CLAUDE.md                 Gedächtnis: wer du bist, wie du schreibst, was erlaubt ist
-  arbeit/CLAUDE.md          Kunden, Projekte, Ablageplan Arbeit
-  privat/CLAUDE.md          Haushalt, Verträge, Ablageplan Privat
-  skills/                   Rezepte für wiederkehrende Aufgaben
-    mail-entwurf/
-    ablage-belege/
-    dokument-vorlage/
-    wochen-rueckblick/
-  protokoll/
-    beobachter.ps1          schreibt mit, welche Dateien du anfasst
-    aktivitaet.csv          entsteht automatisch
+  arbeit/                     Hirn Arbeit, eigenständig
+    CLAUDE.md                 Gedächtnis: Rolle, Kunden, Ablageplan, Schreibstil, Rechte
+    .claude/skills/
+      mail-entwurf/
+      ablage-belege/
+      dokument-vorlage/
+      wochen-rueckblick/
+    protokoll/
+      beobachter.ps1          beobachtet nur Arbeitsordner
+  privat/                     Hirn Privat, eigenständig
+    CLAUDE.md
+    .claude/skills/
+      mail-entwurf/
+      ablage-belege/          mit Steuer-Liste
+      wochen-rueckblick/
+    protokoll/
+      beobachter.ps1          beobachtet nur Privatordner
+  beobachter-kern.ps1         reine Logik für beide Beobachter, keine Daten
 ```
 
-## Einrichten (einmal, ca. 30 Minuten)
+Jeder Beobachter schreibt in sein eigenes `protokoll/aktivitaet.csv`. Die Logs landen nie am selben Ort.
 
-1. Den Ordner `superhirn` nach `C:\Superhirn` kopieren. Deine echten Arbeits- und Privatordner bleiben, wo sie sind. In `arbeit/CLAUDE.md` und `privat/CLAUDE.md` trägst du nur ein, wo sie liegen.
-2. Claude Desktop (Cowork) oder Claude Code installieren und `C:\Superhirn` als Arbeitsordner öffnen. Zusätzlich die echten Datenordner freigeben.
-3. Skills installieren: Die vier Ordner unter `skills/` nach `%USERPROFILE%\.claude\skills\` kopieren. In der Claude-App gehen sie auch per Upload unter Einstellungen → Skills.
-4. Gmail-Connector prüfen. Er ist in deinem Konto schon verbunden.
-5. Die Lücken in den drei `CLAUDE.md` füllen. Alles in `[eckigen Klammern]` ist Platzhalter. Je genauer das ist, desto weniger musst du später korrigieren.
-6. Beobachter starten (siehe unten).
+Die Skills liegen bewusst im jeweiligen Hirn unter `.claude/skills/` und nicht global. So kennt das Arbeitshirn die privaten Skills gar nicht, und umgekehrt.
 
-## Beobachter
+## Warum getrennt
 
-`protokoll/beobachter.ps1` merkt sich nur Dateinamen, Ordner und Uhrzeit. Kein Inhalt, keine Screenshots, keine Tastatureingaben.
+Ein gemeinsames Gedächtnis heißt, dass beim Mailschreiben für einen Kunden auch deine Versicherungsunterlagen im Kontext liegen können. Getrennt kann das technisch nicht passieren, weil jedes Hirn nur seinen eigenen Ordner sieht.
 
-Testweise starten:
+Der Preis: Den Schreibstil (Humanizer) gibt es zweimal. Wenn du ihn änderst, in beiden `CLAUDE.md` ändern.
 
-```powershell
-powershell -ExecutionPolicy Bypass -File C:\Superhirn\protokoll\beobachter.ps1
-```
+## Einrichten
 
-Dauerhaft: In der Aufgabenplanung eine Aufgabe „Bei Anmeldung“ anlegen, die denselben Befehl mit `-WindowStyle Hidden` ausführt.
-
-Welche Ordner beobachtet werden, steht oben im Skript. Standard sind Downloads, Dokumente und Desktop.
+1. `superhirn` nach `C:\Superhirn` kopieren. Deine echten Datenordner bleiben, wo sie sind.
+2. **Claude Code:** Je Hirn ein eigenes Fenster, gestartet im jeweiligen Ordner (`cd C:\Superhirn\arbeit` → `claude`). Die Skills unter `.claude/skills/` werden dann automatisch geladen. Den echten Datenordner mit `/add-dir` dazunehmen.
+   **Cowork / Claude Desktop:** Zwei Projekte anlegen, „Arbeit“ und „Privat“. Den Inhalt der jeweiligen `CLAUDE.md` als Projekt-Anweisung eintragen, nur den passenden Ordner freigeben. Skills werden dort kontoweit hochgeladen (Einstellungen → Skills). Deshalb heißen sie unterschiedlich: `arbeit-mail-entwurf`, `privat-mail-entwurf` usw.
+3. Mail: Das Arbeitshirn bekommt nur das Arbeitskonto, das Privathirn nur das private. Welches Konto wohin gehört, steht oben in der jeweiligen `CLAUDE.md`.
+4. Platzhalter in `[eckigen Klammern]` füllen.
+5. Beide Beobachter starten, jeder mit seinen Ordnern (Anleitung oben im Skript).
 
 ## Routinen
 
-In Cowork unter „Geplante Aufgaben“ anlegen, oder in Claude Code mit `/schedule`:
-
-| Wann | Was |
-|---|---|
-| Werktags 7:45 | `/mail-entwurf` für alle ungelesenen Mails seit gestern, nur Entwürfe |
-| Werktags 17:10 | `/ablage-belege` für Downloads und Scan-Ordner, nur Vorschlagsliste |
-| Freitags 15:50 | `/wochen-rueckblick` |
+| Hirn | Wann | Was |
+|---|---|---|
+| Arbeit | Werktags 7:45 | `/arbeit-mail-entwurf`, nur Entwürfe |
+| Arbeit | Werktags 17:10 | `/arbeit-ablage-belege`, nur Vorschlagsliste |
+| Arbeit | Freitags 15:50 | `/arbeit-wochen-rueckblick` |
+| Privat | Täglich 19:10 | `/privat-mail-entwurf` |
+| Privat | Samstags 9:50 | `/privat-ablage-belege` und `/privat-wochen-rueckblick` |
 
 ## Die ersten zwei Wochen
 
-Woche 1 läuft nur der Beobachter und du nutzt die Skills von Hand. Jede Korrektur, die du zweimal machst, gehört als Regel in die passende `CLAUDE.md`.
+Woche 1 laufen nur die Beobachter, die Skills nutzt du von Hand. Jede Korrektur, die du zweimal machst, wird eine Regel in der passenden `CLAUDE.md`.
 
-Ab Woche 2 laufen die Routinen. Erst wenn die Entwürfe eine Woche lang ohne größere Änderungen durchgehen, lohnt es sich, über mehr Selbstständigkeit nachzudenken.
+Ab Woche 2 laufen die Routinen. Mehr Selbstständigkeit erst, wenn die Entwürfe eine Woche lang fast unverändert durchgehen.
