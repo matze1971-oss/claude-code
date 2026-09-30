@@ -15,8 +15,8 @@
       "args": ["C:\\Superhirn\\mail-baustein\\superhirn_mail.py"],
       "env": {
         "SUPERHIRN_KONTO": "privat",
-        "IMAP_HOST": "imap.DEIN-ANBIETER.de",
-        "IMAP_USER": "DEINE-PRIVATE@ADRESSE.de",
+        "IMAP_HOST": "imap.mail.de",
+        "IMAP_USER": "DEINE-ADRESSE@mail.de",
         "ANHANG_ORDNER": "D:\\Scans"
       }
     }
