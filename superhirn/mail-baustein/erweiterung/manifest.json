@@ -1,0 +1,56 @@
+{
+  "manifest_version": "0.3",
+  "name": "mail-arbeit",
+  "display_name": "Superhirn Mail Arbeit",
+  "version": "1.0.0",
+  "description": "Geschäftspostfach bei mail.de lesen und Antworten als Entwurf ablegen. Kann nicht senden, löschen oder markieren.",
+  "author": { "name": "Matthias" },
+  "server": {
+    "type": "python",
+    "entry_point": "superhirn_mail.py",
+    "mcp_config": {
+      "command": "${user_config.python}",
+      "args": ["${__dirname}/superhirn_mail.py"],
+      "env": {
+        "SUPERHIRN_KONTO": "arbeit",
+        "IMAP_HOST": "imap.mail.de",
+        "IMAP_USER": "${user_config.imap_user}",
+        "ANHANG_ORDNER": "${user_config.anhang_ordner}"
+      }
+    }
+  },
+  "tools": [
+    { "name": "ordner_auflisten", "description": "Ordner des Postfachs anzeigen" },
+    { "name": "mails_suchen", "description": "Mails suchen, ohne sie als gelesen zu markieren" },
+    { "name": "mail_lesen", "description": "Eine Mail komplett lesen" },
+    { "name": "entwurf_anlegen", "description": "Antwort oder neue Mail als Entwurf ablegen, nicht senden" },
+    { "name": "anhaenge_speichern", "description": "Anhänge in den Beleg-Eingang speichern" }
+  ],
+  "user_config": {
+    "imap_user": {
+      "type": "string",
+      "title": "Mailadresse",
+      "description": "Geschäftsadresse bei mail.de. Das Passwort liegt in der Windows-Anmeldeinformationsverwaltung (passwort_speichern.py).",
+      "default": "camping-tex@mail.de",
+      "required": true
+    },
+    "anhang_ordner": {
+      "type": "directory",
+      "title": "Beleg-Eingang",
+      "description": "Hierhin werden Rechnungsanhänge gespeichert.",
+      "default": "${DOCUMENTS}/Claude_Cowork/Belege-Eingang",
+      "required": true
+    },
+    "python": {
+      "type": "file",
+      "title": "Python des Mail-Bausteins",
+      "description": "python.exe aus der Umgebung, in der mcp und keyring installiert sind.",
+      "default": "C:\\Superhirn\\mail-baustein\\.venv\\Scripts\\python.exe",
+      "required": true
+    }
+  },
+  "compatibility": {
+    "platforms": ["win32"],
+    "runtimes": { "python": ">=3.11" }
+  }
+}
