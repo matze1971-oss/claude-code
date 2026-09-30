@@ -62,3 +62,13 @@ Auf dem echten PC (Windows, Python 3.14, mail.de): Login, Ordnerliste, Suche im 
 ## Claude Desktop aus dem Microsoft Store
 
 Die Store-Version hatte früher einen eigenen Datenordner unter `%LOCALAPPDATA%\Packages\Claude_…\LocalCache\Roaming\Claude`. Neuere Versionen nutzen wieder `%APPDATA%\Claude`. Maßgeblich ist der Pfad, der unter Einstellungen → Entwickler bei den laufenden Servern steht.
+
+## Als Erweiterung installieren (Weg für die Store-Version)
+
+Liest Claude Desktop die `claude_desktop_config.json` nicht, geht es über die Erweiterung `mail-arbeit.mcpb`. Sie nutzt dieselbe Python-Umgebung und dasselbe gespeicherte Passwort.
+
+1. `mail-arbeit.mcpb` nach `C:\Superhirn\mail-baustein` laden.
+2. Claude Desktop → Einstellungen → Erweiterungen → „Erweiterung installieren“ bzw. die Datei per Doppelklick öffnen.
+3. Mailadresse, Beleg-Eingang und den Pfad zur `python.exe` bestätigen.
+
+Neu bauen nach Änderungen am Code: `superhirn_mail.py` und `erweiterung/manifest.json` zusammen in ein ZIP packen und die Endung auf `.mcpb` ändern.
