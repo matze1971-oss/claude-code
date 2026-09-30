@@ -14,6 +14,7 @@ Superhirn/
       mail-entwurf/
       ablage-belege/
       dokument-vorlage/
+      angebote-nachfassen/
       wochen-rueckblick/
     protokoll/
       beobachter.ps1          beobachtet nur Arbeitsordner
@@ -26,6 +27,8 @@ Superhirn/
     protokoll/
       beobachter.ps1          beobachtet nur Privatordner
   beobachter-kern.ps1         reine Logik für beide Beobachter, keine Daten
+  mail-baustein/              Zugang zu den IMAP-Postfächern, nur Lesen und Entwürfe
+  routinen.md                 Zeitpläne und Prompts für Cowork
 ```
 
 Jeder Beobachter schreibt in sein eigenes `protokoll/aktivitaet.csv`. Die Logs landen nie am selben Ort.
@@ -43,13 +46,13 @@ Der Preis: Den Schreibstil (Humanizer) gibt es zweimal. Wenn du ihn änderst, in
 1. `superhirn` nach `C:\Superhirn` kopieren. Deine echten Datenordner bleiben, wo sie sind.
 2. **Claude Code:** Je Hirn ein eigenes Fenster, gestartet im jeweiligen Ordner (`cd C:\Superhirn\arbeit` → `claude`). Die Skills unter `.claude/skills/` werden dann automatisch geladen. Den echten Datenordner mit `/add-dir` dazunehmen.
    **Cowork / Claude Desktop:** Zwei Projekte anlegen, „Arbeit“ und „Privat“. Den Inhalt der jeweiligen `CLAUDE.md` als Projekt-Anweisung eintragen, nur den passenden Ordner freigeben. Skills werden dort kontoweit hochgeladen (Einstellungen → Skills). Deshalb heißen sie unterschiedlich: `arbeit-mail-entwurf`, `privat-mail-entwurf` usw.
-3. Mail: Das Arbeitshirn bekommt nur das Arbeitskonto, das Privathirn nur das private. Welches Konto wohin gehört, steht oben in der jeweiligen `CLAUDE.md`.
+3. Mail: `mail-baustein/README.md` folgen. Das Arbeitshirn bekommt `mail-arbeit`, das Privathirn `mail-privat`.
 4. Platzhalter in `[eckigen Klammern]` füllen.
 5. Beide Beobachter starten, jeder mit seinen Ordnern (Anleitung oben im Skript).
 
 ## Routinen
 
-Zeitpläne und fertige Prompts zum Reinkopieren stehen in `routinen.md`. Die Belege- und Rückblick-Routinen laufen sofort, die Mail-Routinen erst, wenn der Mailzugang geklärt ist.
+Zeitpläne und fertige Prompts zum Reinkopieren stehen in `routinen.md`. Die Belege- und Rückblick-Routinen laufen sofort, die Mail-Routinen, sobald der Mail-Baustein eingerichtet ist.
 
 ## Die ersten zwei Wochen
 

@@ -6,7 +6,7 @@ Du arbeitest hier nur für den beruflichen Teil von Matthias. Private Dateien, p
 
 - Name: Matthias
 - Rolle / Firma: [z. B. Projektleiter bei ...]
-- Mailkonto: [Arbeitsadresse] – nur dieses Konto verwenden
+- Mailkonto: [Arbeitsadresse], Outlook beim Hoster [Name]. Zugriff nur über das Werkzeug `mail-arbeit`, nie über `mail-privat`.
 - Grußformel: [z. B. „Viele Grüße / Matthias Nachname“ + Signatur]
 
 ## Wo die Dateien liegen
@@ -39,8 +39,16 @@ Protokolle: `JJJJ-MM-TT_Protokoll_<Thema>.pdf`.
 ## Wiederkehrende Mails
 
 - Terminbestätigung: [wie du es formulierst]
-- Nachfassen nach Angebot: [nach wie vielen Tagen, Ton]
 - Absage: [Ton]
+
+## Angebote
+
+Angebote gehen per Mail raus, meist im Mailtext.
+
+- Stichwörter im Betreff: [z. B. Angebot, Kostenvoranschlag, Preisangebot]
+- Erstes Nachfassen nach: [10] Tagen ohne Antwort
+- Zweites Nachfassen nach: [weiteren 10] Tagen, danach ruhen lassen
+- Nie nachfassen bei: [z. B. Kunde X, Ausschreibungen]
 
 ## Vertraulich
 
@@ -54,6 +62,7 @@ Ohne Rückfrage:
 - Mails im Arbeitskonto lesen und Entwürfe anlegen
 - Dateien im Arbeitsordner lesen, Namen und Ablageort vorschlagen
 - Dokumente als Entwurf in `_entwuerfe/` erzeugen
+- `angebote.csv` und `protokoll/` im Superhirn-Ordner pflegen
 
 Nur nach Freigabe:
 - Mails senden, weiterleiten, löschen, als Spam markieren

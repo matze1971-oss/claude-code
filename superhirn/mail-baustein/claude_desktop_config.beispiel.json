@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "mail-arbeit": {
+      "command": "C:\\Superhirn\\mail-baustein\\.venv\\Scripts\\python.exe",
+      "args": ["C:\\Superhirn\\mail-baustein\\superhirn_mail.py"],
+      "env": {
+        "SUPERHIRN_KONTO": "arbeit",
+        "IMAP_HOST": "imap.DEIN-HOSTER.de",
+        "IMAP_USER": "matthias@DEINE-FIRMA.de",
+        "ANHANG_ORDNER": "D:\\Arbeit\\Belege-Eingang"
+      }
+    },
+    "mail-privat": {
+      "command": "C:\\Superhirn\\mail-baustein\\.venv\\Scripts\\python.exe",
+      "args": ["C:\\Superhirn\\mail-baustein\\superhirn_mail.py"],
+      "env": {
+        "SUPERHIRN_KONTO": "privat",
+        "IMAP_HOST": "imap.DEIN-ANBIETER.de",
+        "IMAP_USER": "DEINE-PRIVATE@ADRESSE.de",
+        "ANHANG_ORDNER": "D:\\Scans"
+      }
+    }
+  }
+}

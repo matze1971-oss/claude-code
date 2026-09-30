@@ -9,7 +9,7 @@ description: Wertet das private Aktivitätsprotokoll, das Ablage-Log und die ges
 
 - `protokoll/aktivitaet.csv` der letzten 7 Tage
 - `protokoll/ablage.log`
-- Gesendete Mails im privaten Konto der letzten 7 Tage (Betreff, Empfänger, erste Zeilen)
+- Gesendete Mails der letzten 7 Tage über `mail-privat`: `mails_suchen(ordner="gesendet", seit_tagen=7)`
 - Vertragstabelle in `CLAUDE.md`
 
 ## Inhalt

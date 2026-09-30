@@ -7,16 +7,18 @@ description: Geht ungelesene Mails im Arbeitskonto durch, sortiert sie nach Drin
 
 ## Ablauf
 
-1. Mails aus dem Arbeitskonto holen (Adresse in `CLAUDE.md`). Standard: ungelesen im Posteingang seit dem letzten Werktag.
+Nur das Werkzeug `mail-arbeit` verwenden.
+
+1. `mails_suchen(nur_ungelesen=True, seit_tagen=<seit letztem Werktag>)`, dann jede Mail mit `mail_lesen` öffnen. Beides ändert nichts am Gelesen-Status.
 2. Jede Mail einordnen:
    - Typ: Termin, Rückfrage, Angebot/Auftrag, Rechnung, Info, Newsletter, Sonstiges
    - Braucht Antwort: ja / nein / Matthias muss entscheiden
    - Privat? Dann nicht bearbeiten, nur als „gehört ins Privathirn“ auflisten.
-3. Für jede Mail mit „ja“ einen Entwurf als Antwort im Thread anlegen:
+3. Für jede Mail mit „ja“ `entwurf_anlegen(antwort_auf_uid=..., text=...)`. Empfänger, Betreff und Verlauf übernimmt das Werkzeug. Regeln für den Text:
    - Ansprache aus der Kundentabelle, Stil aus dem Humanizer in `CLAUDE.md`
    - Nur Fakten aus Mail, Thread oder Arbeitsordner. Fehlt etwas (Termin, Preis, Zusage), `[???: was fehlt]` setzen, nichts erfinden.
    - Kurz. Meist drei bis sechs Sätze.
-4. Rechnungen nicht beantworten, sondern für `/arbeit-ablage-belege` vormerken.
+4. Rechnungen nicht beantworten. Anhänge mit `anhaenge_speichern` in den Beleg-Eingang legen, dort greift `/arbeit-ablage-belege`.
 5. Nichts senden, nichts löschen, nichts als gelesen markieren.
 
 ## Ausgabe

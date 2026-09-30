@@ -5,7 +5,7 @@ Du arbeitest hier nur für den privaten Teil von Matthias. Firmendateien, Kunden
 ## Wer ich bin
 
 - Name: Matthias
-- Mailkonto: [private Adresse] – nur dieses Konto verwenden
+- Mailkonto: [private Adresse] bei [Anbieter]. Zugriff nur über das Werkzeug `mail-privat`, nie über `mail-arbeit`.
 - Grußformel: [z. B. „Gruß Matthias“ bzw. bei Behörden „Mit freundlichen Grüßen / Matthias Nachname“]
 - Anschrift für Briefe: [Straße, PLZ Ort]
 

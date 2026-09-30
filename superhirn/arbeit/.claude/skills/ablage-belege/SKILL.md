@@ -7,7 +7,7 @@ description: Liest neue Rechnungen, PDFs und Scans aus dem Beleg-Eingang Arbeit 
 
 ## Ablauf
 
-1. Quellen: Beleg-Eingang Arbeit (Pfad in `CLAUDE.md`) und Mails, die `/arbeit-mail-entwurf` als Rechnung vorgemerkt hat.
+1. Quelle: Beleg-Eingang Arbeit (Pfad in `CLAUDE.md`). Rechnungsanhänge aus Mails landen dort über den Mail-Baustein automatisch.
 2. Jede Datei lesen. Gescannte PDFs ohne Text vorher per OCR lesbar machen.
 3. Herausziehen: Datum auf dem Beleg, Absender, Art (Rechnung, Angebot, Vertrag, Lieferschein, Sonstiges), Betrag, Kunde oder Projekt.
 4. Dateinamen und Zielordner nach dem Ablageplan in `CLAUDE.md` bilden.

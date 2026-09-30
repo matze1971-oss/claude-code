@@ -68,9 +68,9 @@ Muster aus C:\Superhirn\privat\protokoll\aktivitaet.csv. Speichere das Ergebnis 
 _entwuerfe/wochenrueckblick_<Datum>.md.
 ```
 
-## Warten auf Mailzugang
+## Nach Einrichtung des Mail-Bausteins
 
-Diese Routinen erst anlegen, wenn geklärt ist, wie das Superhirn an deine Mails kommt.
+Erst anlegen, wenn `mail-arbeit` bzw. `mail-privat` unter Einstellungen → Entwickler als „running“ erscheinen (siehe `mail-baustein/README.md`).
 
 ### Arbeit: Postfach am Morgen
 
@@ -78,7 +78,8 @@ Diese Routinen erst anlegen, wenn geklärt ist, wie das Superhirn an deine Mails
 - Zeitplan: Montag bis Freitag, 7:45
 
 ```
-Führe den Skill arbeit-mail-entwurf aus: ungelesene Mails seit dem letzten Werktag.
+Führe den Skill arbeit-mail-entwurf mit dem Werkzeug mail-arbeit aus: ungelesene Mails
+seit dem letzten Werktag.
 Nur Entwürfe anlegen, nichts senden, nichts löschen, nichts als gelesen markieren.
 Übersicht als _entwuerfe/postfach_<Datum>.md speichern.
 ```
@@ -89,12 +90,25 @@ Nur Entwürfe anlegen, nichts senden, nichts löschen, nichts als gelesen markie
 - Zeitplan: täglich, 19:10
 
 ```
-Führe den Skill privat-mail-entwurf aus: ungelesene Mails seit gestern.
+Führe den Skill privat-mail-entwurf mit dem Werkzeug mail-privat aus: ungelesene
+Mails seit gestern.
 Preiserhöhungen und Fristen oben melden. Nur Entwürfe, nichts senden oder löschen.
 Übersicht als _entwuerfe/postfach_<Datum>.md speichern.
 ```
 
+### Arbeit: Angebote nachfassen
+
+- Projekt: Arbeit
+- Zeitplan: Montag bis Freitag, 8:10
+- Ordner: `C:\Superhirn\arbeit`
+
+```
+Führe den Skill arbeit-angebote-nachfassen mit dem Werkzeug mail-arbeit aus.
+Fristen und Stichwörter stehen in den Projekt-Anweisungen unter "Angebote".
+Nur Entwürfe anlegen. angebote.csv aktualisieren. Übersicht als
+_entwuerfe/angebote_<Datum>.md speichern.
+```
+
 ## Ausbau (vorgemerkt)
 
-- **Morgenbriefing Arbeit**, werktags 7:50, nach dem Postfach: Termine des Tages, offene Entwürfe, fällige Nachfass-Mails. Braucht Kalenderzugang.
-- **Angebots-Nachverfolgung**, werktags 8:10: liest `angebote.csv` im Arbeitsordner (Kunde, Datum, Betrag, Status) und legt nach [X] Tagen ohne Antwort eine Nachfass-Mail als Entwurf an. Braucht Mailzugang.
+- **Morgenbriefing Arbeit**, werktags 7:50: Termine des Tages, offene Entwürfe, fällige Nachfass-Mails. Offen ist, wo dein Kalender liegt. Bei einem IMAP-Konto in Outlook meist nur lokal auf dem PC.

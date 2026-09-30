@@ -9,7 +9,7 @@ description: Wertet das Aktivitätsprotokoll, das Ablage-Log und die gesendeten 
 
 - `protokoll/aktivitaet.csv` der letzten 7 Tage
 - `protokoll/ablage.log`
-- Gesendete Mails im Arbeitskonto der letzten 7 Tage (Betreff, Empfänger, erste Zeilen)
+- Gesendete Mails der letzten 7 Tage über `mail-arbeit`: `mails_suchen(ordner="gesendet", seit_tagen=7)`
 - Entwürfe, die Matthias vor dem Senden deutlich geändert hat
 
 ## Wonach suchen

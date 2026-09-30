@@ -7,7 +7,7 @@ description: Liest neue private PDFs, Scans und Rechnungen aus Downloads, Scan-E
 
 ## Ablauf
 
-1. Quellen: Downloads, Scan-Eingang (Pfad in `CLAUDE.md`), Mails, die `/privat-mail-entwurf` vorgemerkt hat.
+1. Quellen: Downloads und Scan-Eingang (Pfad in `CLAUDE.md`). Rechnungsanhänge aus Mails landen über den Mail-Baustein im Scan-Eingang.
 2. Jede Datei lesen, Scans ohne Text vorher per OCR lesbar machen.
 3. Herausziehen: Datum, Absender, Art (Rechnung, Vertrag, Bescheid, Versicherung, Arzt, Sonstiges), Betrag.
 4. Dateinamen und Zielordner nach dem Ablageplan in `CLAUDE.md` bilden.
