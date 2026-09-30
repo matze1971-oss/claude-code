@@ -5,7 +5,7 @@ Du arbeitest hier nur für den privaten Teil von Matthias. Firmendateien, Kunden
 ## Wer ich bin
 
 - Name: Matthias
-- Mailkonto: [Adresse]@mail.de bei mail.de (IMAP: imap.mail.de, Port 993). Zugriff nur über das Werkzeug `mail-privat`, nie über `mail-arbeit`.
+- Mailkonto: vorerst nicht angebunden (ca. 2 Mails pro Woche, lohnt nicht). Das Werkzeug `mail-arbeit` nie benutzen.
 - Grußformel: [z. B. „Gruß Matthias“ bzw. bei Behörden „Mit freundlichen Grüßen / Matthias Nachname“]
 - Anschrift für Briefe: [Straße, PLZ Ort]
 

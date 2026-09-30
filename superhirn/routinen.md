@@ -84,7 +84,9 @@ Nur Entwürfe anlegen, nichts senden, nichts löschen, nichts als gelesen markie
 Übersicht als _entwuerfe/postfach_<Datum>.md speichern.
 ```
 
-### Privat: Postfach am Abend
+### Privat: Postfach am Abend (vorerst nicht anlegen)
+
+Das Privatkonto ist nicht angebunden. Bei ca. 2 Mails pro Woche lohnt sich die Routine nicht.
 
 - Projekt: Privat
 - Zeitplan: täglich, 19:10

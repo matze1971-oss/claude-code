@@ -5,6 +5,8 @@ description: Geht ungelesene Mails im privaten Konto durch, filtert Werbung hera
 
 # Mail-Entwürfe Privat
 
+Vorerst ruhend: Das Privatkonto ist nicht angebunden. Wird erst aktiv, wenn `mail-privat` in Claude Desktop eingetragen ist.
+
 ## Ablauf
 
 Nur das Werkzeug `mail-privat` verwenden.

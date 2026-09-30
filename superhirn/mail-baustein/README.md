@@ -1,6 +1,6 @@
 # Mail-Baustein
 
-Verbindet Cowork mit deinen IMAP-Postfächern: einmal Arbeit (dein Outlook-Postfach beim Hoster), einmal Privat. Pro Hirn läuft eine eigene Instanz mit eigenem Konto.
+Verbindet Cowork mit deinem Geschäftspostfach bei mail.de (`mail-arbeit`). Ein zweites Konto für Privat lässt sich später genauso ergänzen: gleicher Block mit `SUPERHIRN_KONTO=privat` unter dem Namen `mail-privat`.
 
 Der Baustein kann:
 
@@ -43,7 +43,15 @@ Senden, löschen, verschieben oder markieren kann er nicht, weil es diese Funkti
 
 ## Grenze der Trennung
 
+Solange nur `mail-arbeit` eingetragen ist, gibt es dieses Problem nicht: Das Privathirn hat schlicht kein Postfach.
+
+Sobald später auch `mail-privat` dazukommt:
+
 Beide Instanzen sind in Claude Desktop für alle Projekte sichtbar. Dass das Arbeitshirn nur `mail-arbeit` benutzt, steht in dessen Anweisungen, technisch erzwungen ist es nicht. Wer das hart trennen will, braucht zwei Windows-Benutzerkonten mit je einer Claude-Desktop-Installation.
+
+## Ordner bei mail.de mit Outlook
+
+Outlook zeigt den Server-Ordner `Sent` als „Sent Items“ an. Der Baustein findet ihn über die offizielle Kennung von selbst. Die leeren Ordner `Gesendete Elemente`, `Sent Messages` und `Entwürfe` sind Altlasten und werden nicht benutzt.
 
 ## Getestet
 
